@@ -1,0 +1,31 @@
+<?com.wuyunbin.anita.xml version="1.0" encoding="UTF-8"?>
+<converter>
+	<!-- MYSQL数据库 -->
+	<type key="VARCHAR" value="String"/>
+	<type key="BIGINT" value="Long"/>
+	<type key="INT" value="Integer"/>
+	<type key="DATE" value="java.databaseUtil.Date"/>
+	<type key="DATETIME" value="java.databaseUtil.Date"/>
+	<type key="DOUBLE" value="Double"/>
+	<type key="TEXT" value="String"/>
+	<type key="BIT" value="Boolean"/>
+	<type key="TINYINT" value="Byte"/>
+	<type key="CHAR" value="String"/>
+	<type key="TIME" value="java.time.LocalTime"/>
+	<type key="TIMESTAMP" value="java.time.LocalDateTime"/>
+	<type key="DATETIME" value="java.time.LocalDateTime"/>
+	<type key="Decimal" value="java.math.BigDecimal"/>
+	<type key="BLOB" value="byte[]"/>
+	<type key="VARBINARY" value="byte[]"/>
+	<type key="CLOB" value="String"/>
+	<type key="SMALLINT" value="Short"/>
+	<type key="FLOAT" value="Float"/>
+	<type key="NUMERIC" value="Double"/>
+	<type key="FLOAT" value="Float"/>
+	<type key="BINARY" value="byte[]"/>
+	<!-- ORACLE -->
+	<type key="VARCHAR2" value="String"/>
+	<type key="NVARCHAR2" value="String"/>
+	<type key="NUMBER" value="Long"/>
+	<type key="CHAR" value="String"/>
+</converter>
