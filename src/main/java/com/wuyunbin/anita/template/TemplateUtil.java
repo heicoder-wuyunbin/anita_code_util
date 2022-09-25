@@ -17,7 +17,7 @@ public class TemplateUtil {
      * @param basePath
      * @return
      */
-    public static List<Template> getTempletList(String basePath) {
+    public static List<Template> getTemplateList(String basePath) {
         List<Template> list = null;
 
         //递归显示C盘下所有文件夹及其中文件
@@ -31,7 +31,7 @@ public class TemplateUtil {
     }
 
 
-    static List<Template> showAllFiles(String basePath, File dir) throws Exception {
+    static List<Template> showAllFiles(String basePath, File dir) {
         List<Template> list = new ArrayList<>();
 
         File[] fs = dir.listFiles();

@@ -4,8 +4,8 @@
 	<type key="VARCHAR" value="String"/>
 	<type key="BIGINT" value="Long"/>
 	<type key="INT" value="Integer"/>
-	<type key="DATE" value="java.databaseUtil.Date"/>
-	<type key="DATETIME" value="java.databaseUtil.Date"/>
+	<type key="DATE" value="java.util.Date"/>
+	<type key="DATETIME" value="java.util.Date"/>
 	<type key="DOUBLE" value="Double"/>
 	<type key="TEXT" value="String"/>
 	<type key="BIT" value="Boolean"/>
@@ -18,6 +18,7 @@
 	<type key="BLOB" value="byte[]"/>
 	<type key="VARBINARY" value="byte[]"/>
 	<type key="CLOB" value="String"/>
+	<type key="LONGTEXT" value="String"/>
 	<type key="SMALLINT" value="Short"/>
 	<type key="FLOAT" value="Float"/>
 	<type key="NUMERIC" value="Double"/>

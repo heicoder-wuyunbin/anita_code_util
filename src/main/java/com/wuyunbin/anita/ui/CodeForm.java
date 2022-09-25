@@ -7,6 +7,7 @@
 
 package com.wuyunbin.anita.ui;
 
+import cn.hutool.core.io.resource.Resource;
 import com.wuyunbin.anita.constant.Constant;
 import com.wuyunbin.anita.template.Code;
 import com.wuyunbin.anita.xml.XmlUtil;
@@ -188,12 +189,11 @@ public class CodeForm extends JFrame {
     }
 
     private void formWindowOpened(WindowEvent evt) {
-
         setLocationRelativeTo(null);
-
         //获取当前文件夹下的模板目录下的所有文件夹
         //设定为当前文件夹
-        File directory = new File(new File("").getAbsolutePath() + File.separatorChar + "模板");
+        File directory = new File(new File("").getAbsolutePath() + File.separatorChar + "templates");
+
         File[] listFiles = directory.listFiles();
         if (listFiles != null) {
             for (File f : listFiles) {
@@ -242,13 +242,13 @@ public class CodeForm extends JFrame {
                 //路径map封装
                 Map<String, String> pathMap = new HashMap<>();
                 //获取当前文件夹下的模板目录下的所有文件夹
-                String basePath = new File("").getAbsolutePath() + File.separatorChar + "模板" + File.separatorChar
+                String basePath = new File("").getAbsolutePath() + File.separatorChar + "templates" + File.separatorChar
                         + templates.getSelectedItem();//设定为当前文件夹
 
                 pathMap.put("templetPath", basePath);
-                pathMap.put("projectTempletPath", basePath + File.separatorChar + "工程模板");
-                pathMap.put("tablleTempletPath", basePath + File.separatorChar + "表级模板");
-                pathMap.put("columnTempletPath", basePath + File.separatorChar + "列级模板");
+                pathMap.put("projectTempletPath", basePath + File.separatorChar + "project");
+                pathMap.put("tablleTempletPath", basePath + File.separatorChar + "table");
+                pathMap.put("columnTempletPath", basePath + File.separatorChar + "column");
                 pathMap.put("xmlPath", structFile.getText());
                 pathMap.put("codePath", targetPath.getText());
 

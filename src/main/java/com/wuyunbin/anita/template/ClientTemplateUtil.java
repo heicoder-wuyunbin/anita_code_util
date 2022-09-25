@@ -88,7 +88,6 @@ public class ClientTemplateUtil {
                     b = checkKey(ks, column, b);
                     //根据模板生成新内容
                     if (b) {
-                        log.info("替换符号内容：" + foreachContent);
                         String newContent = foreachContent.replace("[column]", column.getColumnName());
                         newContent = newContent.replace("[Column]", Utils.getClassName(column.getColumnName()));
 
@@ -105,7 +104,6 @@ public class ClientTemplateUtil {
                         //备注
                         newContent = newContent.replace("[columnComment]", column.getColumnComment());
                         createContent.append(newContent);
-                        log.info("替换后内容：" + newContent);
                     }
                 }
                 //替换主体内容

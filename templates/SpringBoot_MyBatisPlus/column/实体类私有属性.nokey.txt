@@ -1,0 +1,5 @@
+	/**
+	* [columnComment]
+	*/
+	@TableField("[column]")
+	private [type] [column2];

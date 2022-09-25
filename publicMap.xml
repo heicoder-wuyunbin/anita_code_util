@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <map key="path_3" value="blog"/>
+  <map key="package" value="com.wuyunbin.blog"/>
+  <map key="path_2" value="wuyunbin"/>
+  <map key="dbpassword" value="root"/>
+  <map key="author" value="wuyunbin"/>
+  <map key="prefix" value=""/>
+  <map key="projectComment" value="blue_blog"/>
+  <map key="project" value="blue_blog"/>
+  <map key="dbuser" value="root"/>
+  <map key="path_1" value="com"/>
+  <map key="db" value="blue_blog"/>
+  <map key="path_all" value="com/wuyunbin/blog"/>
+</root>

@@ -46,7 +46,7 @@ public class Code {
         Map<String, String> tableTemplateMap = ClientTemplateUtil.getTemplateList(tablleTempletPath);
         //列级模板MAP
         Map<String, String> columnTemplateMap = ClientTemplateUtil.getTemplateList(columnTempletPath);
-        List<Template> list = TemplateUtil.getTempletList(projectTempletPath);
+        List<Template> list = TemplateUtil.getTemplateList(projectTempletPath);
         //循环所有模板
         for (Template t : list) {
             log.info("处理模板：" + t.getPath() + "   --- " + t.getFileName());
@@ -75,9 +75,6 @@ public class Code {
 
                         //替换列级模板部分
                         outContent = ClientTemplateUtil.createContent(outContent, columnTemplateMap, table);
-
-                        //全局替换符嵌套替换符处理********
-                        log.info("全局替换符嵌套替换符处理********" + table.getName());
 
                         //全局替换
                         outContent = ClientTemplateUtil.createContent(outContent, publicMap);
