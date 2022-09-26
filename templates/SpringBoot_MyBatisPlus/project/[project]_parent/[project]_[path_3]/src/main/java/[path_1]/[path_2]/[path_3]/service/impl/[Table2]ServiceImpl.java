@@ -24,4 +24,13 @@ public class [Table2]ServiceImpl extends SuperServiceImpl<[Table2]Mapper, [Table
 
 		return this.page(new Page<>(currentIndex,pageSize), query);
 	}
+
+	@Override
+	public IPage<Category> findSearch(int currentIndex,
+							          int pageSize,
+		 	 					      Map<String, Object> searchMap) {
+		LambdaQueryWrapper<Category> query=new LambdaQueryWrapper<>();
+		<条件查询.String.txt>
+		return this.page(new Page<>(currentIndex,pageSize), query);
+	}
 }

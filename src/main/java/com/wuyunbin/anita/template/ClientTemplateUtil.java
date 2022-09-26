@@ -67,7 +67,7 @@ public class ClientTemplateUtil {
      * 替换列级模板
      *
      * @param oldContent 原文本
-     * @param map        子替换符号列表
+     * @param map 子替换符号列表
      * @return 替换后的文本
      */
     public static String createContent(String oldContent, Map<String, String> map, Table table) {

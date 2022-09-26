@@ -1,101 +1,97 @@
 package [package].controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import [package].pojo.[Table];
-import [package].service.[Table]Service;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import [package].pojo.[Table2];
+import [package].service.[Table2]Service;
 import entity.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 /**
- * [comment]控制器层
- * @author Administrator
- *
+ * [comment] 控制器层
+ * @author [author]
  */
-@RestController
 @Slf4j
-@RequestMapping("/[table2]")
+@RestController
+@RequestMapping("[table2]")
 public class [Table2]Controller {
-
 	@Autowired
 	private [Table2]Service [table2]Service;
-	
-	
+
 	/**
 	 * 查询全部数据
 	 * @return
 	 */
-	@RequestMapping(method= RequestMethod.GET)
-	public Result findAll(){
-		return  Result.success([table2]Service.findAll());
+	@GetMapping
+	public Result<List<[Table2]>> findAll(){
+		return Result.success([table2]Service.list());
 	}
-	
+
 	/**
 	 * 根据ID查询
 	 * @param [key2] ID
 	 * @return
 	 */
-	@RequestMapping(value="/{[key2]}",method= RequestMethod.GET)
-	public Result findById(@PathVariable [keyType] [key2]){
-		return  Result.success([table2]Service.findById([key2]));
+	@GetMapping("{id}")
+	public Result<[Table2]> findById(@PathVariable String id){
+		return Result.success([table2]Service.getById(id));
 	}
 
+	/**
+	 * 分页
+	 * @param currentIndex 页码
+	 * @param pageSize 页大小
+	 * @return 分页结果
+	 */
+	@GetMapping("getList/{currentIndex}/{pageSize}")
+	public Result<IPage<[Table2]>> getList(@PathVariable int currentIndex, @PathVariable int pageSize) {
+		IPage<[Table2]> list = [table2]Service.getList(currentIndex,pageSize);
+		return Result.success(list);
+	}
 
 	/**
 	 * 分页+多条件查询
-	 * @param searchMap 查询条件封装
-	 * @param page 页码
-	 * @param size 页大小
+	 * @param currentIndex 页码
+	 * @param pageSize 页大小
+     * @param searchMap 查询条件封装
 	 * @return 分页结果
 	 */
-	@RequestMapping(value="/search/{page}/{size}",method=RequestMethod.POST)
-	public Result findSearch(@RequestBody Map searchMap , @PathVariable int page, @PathVariable int size){
-		Page<[Table2]> pageList = [table2]Service.findSearch(searchMap, page, size);
-		return   Result.success(pageList);
+	@PostMapping("search/{currentIndex}/{pageSize}")
+	public Result<IPage<[Table2]>> findSearch(@PathVariable int currentIndex,
+											  @PathVariable int pageSize,
+											  @RequestBody  Map<String,Object> searchMap){
+		IPage<[Table2]> list = [table2]Service.findSearch(currentIndex,pageSize,searchMap);
+		return Result.success(list);
 	}
 
-	/**
-     * 根据条件查询
-     * @param searchMap
-     * @return
-     */
-    @RequestMapping(value="/search",method = RequestMethod.POST)
-    public Result findSearch( @RequestBody Map searchMap){
-        return  Result.success([table2]Service.findSearch(searchMap));
-    }
-	
 	/**
 	 * 增加
 	 * @param [table2]
 	 */
-	@RequestMapping(method=RequestMethod.POST)
-	public Result add(@RequestBody [Table2] [table2]  ){
-		[table2]Service.add([table2]);
-		return  Result.success("增加成功");
+	@PostMapping(consumes = "application/json")
+	public Result<Boolean> add(@RequestBody [Table2] [table2]) {
+		return Result.success([table2]Service.save([table2]));
 	}
-	
+
 	/**
 	 * 修改
 	 * @param [table2]
 	 */
-	@RequestMapping(value="/{id}",method= RequestMethod.PUT)
-	public Result update(@RequestBody [Table2] [table2], @PathVariable [keyType] [key2] ){
-		[table2].set[Key2]([key2]);
-		[table2]Service.update([table2]);
-		return  Result.success(null);
+	@PutMapping
+	public Result<Boolean> update(@RequestBody [Table2] [table2]){
+		return Result.success([table2]Service.updateById([table2])) ;
 	}
-	
+
 	/**
 	 * 删除
 	 * @param [key2]
 	 */
-	@RequestMapping(value="/{id}",method= RequestMethod.DELETE)
-	public Result delete(@PathVariable [keyType] [key2]){
-		[table2]Service.deleteById([key2]);
-		return  Result.success(null);
+	@DeleteMapping("{id}")
+	public Result<Boolean> deleteById(@PathVariable String id){
+		return Result.success([table2]Service.removeById(id));
 	}
-	
 }
