@@ -7,7 +7,6 @@
 
 package com.wuyunbin.anita.ui;
 
-import cn.hutool.core.io.resource.Resource;
 import com.wuyunbin.anita.constant.Constant;
 import com.wuyunbin.anita.template.Code;
 import com.wuyunbin.anita.xml.XmlUtil;
@@ -62,33 +61,8 @@ public class CodeForm extends JFrame {
     private void initComponents() {
         this.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("艾妮塔代码生成器");
-        this.setSize(600, 800);
+        this.setSize(540, 560);
         this.setLayout(null);
-
-        this.add(btnGenerate);
-        this.add(btnExit);
-        this.add(btnStructFile);
-        this.add(btnTargetPath);
-        this.add(templates);
-        this.add(txtTemplate);
-        this.add(txtUsername);
-        this.add(txtPassword);
-        this.add(txtStructFile);
-        this.add(txtTargetPath);
-        this.add(txtProjectNameEn);
-        this.add(txtProjectNameCn);
-        this.add(txtPackageName);
-        this.add(txtAuthor);
-        this.add(txtDatabase);
-        this.add(database);
-        this.add(username);
-        this.add(password);
-        this.add(structFile);
-        this.add(targetPath);
-        this.add(projectNameEn);
-        this.add(packageName);
-        this.add(projectNameCn);
-        this.add(author);
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -116,6 +90,7 @@ public class CodeForm extends JFrame {
         this.add(targetPath);
 
         btnTargetPath.setBounds(Constant.elementLeft + Constant.elementWidth + 10, Constant.lineHeight * 2, Constant.btnWidth, Constant.elementHeight);
+        btnTargetPath.addActionListener(this::setTargetPath);
         this.add(btnTargetPath);
 
         txtStructFile.setBounds(3);
@@ -125,6 +100,7 @@ public class CodeForm extends JFrame {
         this.add(structFile);
 
         btnStructFile.setBounds(Constant.elementLeft + Constant.elementWidth + 10, Constant.lineHeight * 3, Constant.btnWidth, Constant.elementHeight);
+        btnStructFile.addActionListener(this::setStructFile);
         this.add(btnStructFile);
 
         txtProjectNameEn.setBounds(4);
@@ -169,23 +145,18 @@ public class CodeForm extends JFrame {
         password.setBounds(10);
         this.add(password);
 
-        btnGenerate.setBounds(1,11);
+        btnGenerate.setBounds(0,11);
+        btnGenerate.addActionListener(this::generate);
         this.add(btnGenerate);
 
-
-        btnGenerate.addActionListener(this::generate);
-
-        btnExit.addActionListener(this::jButton2ActionPerformed);
-
-        btnStructFile.addActionListener(this::setStructFile);
-
-        btnTargetPath.addActionListener(this::setTargetPath);
+        btnExit.setBounds(1,11);
+        btnExit.addActionListener(this::btnExit);
+        this.add(btnExit);
     }
 
     private void formWindowClosing(WindowEvent evt) {
         dispose();
         System.exit(0);
-
     }
 
     private void formWindowOpened(WindowEvent evt) {
@@ -213,7 +184,7 @@ public class CodeForm extends JFrame {
         }
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnExit(ActionEvent evt) {
         System.exit(0);
     }
 

@@ -81,8 +81,6 @@ public class DatabaseForm extends JFrame {
         databaseTypes.setBounds(1);
         this.add(databaseTypes);
 
-        databases.setModel(new DefaultComboBoxModel<>(new String[]{"--请选择数据库--"}));
-
         txtAddress.setBounds(2);
         this.add(txtAddress);
 
@@ -113,15 +111,11 @@ public class DatabaseForm extends JFrame {
 
         btnConnect.setBounds(0, 7);
         btnConnect.addActionListener(this::connectDatabase);
+        this.add(btnConnect);
 
         btnSkip.setBounds(1, 7);
         btnSkip.addActionListener(this::generator);
-
-        this.add(btnConnect);
-
-        btnSkip.addActionListener(event -> this.setVisible(false));
         this.add(btnSkip);
-
     }
 
 
