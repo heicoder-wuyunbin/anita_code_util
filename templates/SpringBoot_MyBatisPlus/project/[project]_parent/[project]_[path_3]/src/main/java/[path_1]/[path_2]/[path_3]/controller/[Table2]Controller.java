@@ -33,12 +33,12 @@ public class [Table2]Controller {
 
 	/**
 	 * 根据ID查询
-	 * @param [key2] ID
+	 * @param [key2]
 	 * @return
 	 */
-	@GetMapping("{id}")
-	public Result<[Table2]> findById(@PathVariable String id){
-		return Result.success([table2]Service.getById(id));
+	@GetMapping("{[key2]}")
+	public Result<[Table2]> findById(@PathVariable String [key2]){
+		return Result.success([table2]Service.getById([key2]));
 	}
 
 	/**
@@ -90,8 +90,8 @@ public class [Table2]Controller {
 	 * 删除
 	 * @param [key2]
 	 */
-	@DeleteMapping("{id}")
-	public Result<Boolean> deleteById(@PathVariable String id){
-		return Result.success([table2]Service.removeById(id));
+	@DeleteMapping("{[key2]}")
+	public Result<Boolean> deleteById(@PathVariable String [key2]){
+		return Result.success([table2]Service.removeById([key2]));
 	}
 }

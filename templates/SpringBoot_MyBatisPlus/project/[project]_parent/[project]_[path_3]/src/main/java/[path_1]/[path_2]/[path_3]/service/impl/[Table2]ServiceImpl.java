@@ -8,7 +8,8 @@ import [package].pojo.[Table2];
 import [package].service.[Table2]Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author wuyunbin
@@ -26,10 +27,10 @@ public class [Table2]ServiceImpl extends SuperServiceImpl<[Table2]Mapper, [Table
 	}
 
 	@Override
-	public IPage<Category> findSearch(int currentIndex,
+	public IPage<[Table2]> findSearch(int currentIndex,
 							          int pageSize,
 		 	 					      Map<String, Object> searchMap) {
-		LambdaQueryWrapper<Category> query=new LambdaQueryWrapper<>();
+		LambdaQueryWrapper<[Table2]> query=new LambdaQueryWrapper<>();
 		<条件查询.String.txt>
 		return this.page(new Page<>(currentIndex,pageSize), query);
 	}

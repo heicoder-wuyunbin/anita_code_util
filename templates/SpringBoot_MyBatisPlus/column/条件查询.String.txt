@@ -1,2 +1,2 @@
-// [columnComment]
-query.eq(!Objects.isNull(searchMap.get("[column2]")),[Table2]::get[Column2],searchMap.get("[column2]"));
+        // [columnComment]
+        query.eq(!Objects.isNull(searchMap.get("[column2]")),[Table2]::get[Column2],searchMap.get("[column2]"));
